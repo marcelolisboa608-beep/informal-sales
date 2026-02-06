@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <!-- My CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>AdminHub</title>
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <section id="sidebar">
+    <a href="#" class="brand">
+      <i class="bx bxs-smile"></i>
+      <span class="text">AdminHub</span>
+    </a>
+    <ul class="side-menu top">
+
+      <li>
+        <a href="dashboard.html">
+          <i class="bx bxs-dashboard"></i>
+          <span class="text">Dashboard</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="produtos.html">
+          <i class="bx bxs-box"></i>
+          <span class="text">Produtos</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="vendas.html">
+          <i class="bx bxs-shopping-bag-alt"></i>
+          <span class="text">Vendas</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="graficos.html">
+          <i class="bx bxs-doughnut-chart"></i>
+          <span class="text">Gráficos e Análises</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="perfil.html">
+          <i class="bx bxs-user-detail"></i>
+          <span class="text">Perfil de Negócio</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+  <!-- SIDEBAR -->
+
+  <!-- CONTENT -->
+  <section id="content">
+    <!-- NAVBAR -->
+    <nav>
+      <i class="bx bx-menu"></i>
+      <a href="#" class="nav-link">Categories</a>
+      <form action="#">
+        <div class="form-input">
+          <input type="search" placeholder="Search..." />
+          <button type="submit" class="search-btn">
+            <i class="bx bx-search"></i>
+          </button>
+        </div>
+      </form>
+      <input type="checkbox" id="switch-mode" hidden />
+      <label for="switch-mode" class="switch-mode"></label>
+      <a href="#" class="notification">
+        <i class="bx bxs-bell"></i>
+        <span class="num">8</span>
+      </a>
+      <a href="#" class="profile">
+        <img src="img/people.png" />
+      </a>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- MAIN -->
+    <main id="dashboard">
+      <div class="head-title">
+        <div class="left">
+          <h1>Dashboard</h1>
+          <ul class="breadcrumb">
+            <li>
+              <a href="#">Dashboard</a>
+            </li>
+            <li>
+              <i class="bx bx-chevron-right"></i>
+            </li>
+            <li>
+              <a class="active" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="container-vendas-btns">
+          <a href="#" class="btn-download">
+            <i class="bx bx-edit"></i>
+            <span class="text">Editar Dashboard</span>
+          </a>
+          <a href="#" class="btn-download">
+            <i class="bx bxs-cloud-download"></i>
+            <span class="text">Download PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="insights">
+        <!-- start selling -->
+        <div class="sales">
+          <span class="material-symbols-sharp">trending_up</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Vendas de Hoje</h3>
+              <h1>12 550 Kz</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="32" cy="38" cx="40"></circle>
+              </svg>
+              <div class="number">+80%</div>
+            </div>
+          </div>
+          <small><i class="bx bxs-chevron-up"></i> Em relação à ontem</small>
+        </div>
+        <!-- end selling -->
+
+        <!-- start expenses -->
+        <div class="expenses">
+          <span class="material-symbols-sharp">local_mall</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Lucro Semanal</h3>
+              <h1>50 000Kz</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="32" cy="38" cx="38"></circle>
+              </svg>
+              <div class="number">-10%</div>
+            </div>
+          </div>
+          <small><i class="bx bxs-chevron-down"></i>Em relação à semana
+            anterior</small>
+        </div>
+        <!-- end expenses -->
+
+        <!-- start expenses -->
+        <div class="income">
+          <span class="material-symbols-sharp">stacked_line_chart</span>
+          <div class="middle">
+            <div class="left">
+              <h3>Vendas do Mês</h3>
+              <h1>102 045Kz</h1>
+            </div>
+            <div class="progress">
+              <svg>
+                <circle r="32" cy="38" cx="40"></circle>
+              </svg>
+              <div class="number">+80%</div>
+            </div>
+          </div>
+          <small><i class="bx bxs-chevron-down"></i> Em relação ao mês
+            anterior</small>
+        </div>
+        <!-- end selling -->
+      </div>
+      <!-- end insights -->
+
+      <div class="table-data">
+        <div class="chart">
+          <h2>Vendas diárias (Últimos 7 dias)</h2>
+          <canvas id="line-chart"></canvas>
+        </div>
+
+        <div class="chart">
+          <h2>Top 5 Produtos mais vendidos</h2>
+          <canvas id="doughnut-chart"></canvas>
+        </div>
+
+        <div class="recommend-cards">
+          <h2>Recomendações Inteligentes</h2>
+
+          <!-- CARD 1 - Reposição de estoque -->
+          <div class="recommend-card stock">
+            <div class="rec-line"></div>
+            <div class="date-box">
+              <span class="day">Seg</span>
+              <span class="number">26</span>
+            </div>
+
+            <div class="info">
+              <h3>Reposição de estoque 🛒</h3>
+              <p class="desc">
+                As vendas de Fanta 1L aumentaram 25% — reponha estoque.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 2 - Tendências de vendas -->
+          <div class="recommend-card trending">
+            <div class="rec-line"></div>
+            <div class="date-box">
+              <span class="day">Seg</span>
+              <span class="number">26</span>
+            </div>
+
+            <div class="info">
+              <h3>Aumento de vendas 📈</h3>
+              <p class="desc">
+                Sexta-feira tem 40% mais vendas — considere promoções.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 3 - Clima -->
+          <div class="recommend-card weather">
+            <div class="rec-line"></div>
+            <div class="date-box">
+              <span class="day">Seg</span>
+              <span class="number">26</span>
+            </div>
+
+            <div class="info">
+              <h3>Clima favorável 🌦️</h3>
+              <p class="desc">
+                Vai fazer calor — bebidas geladas tendem a vender mais.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARD 4 - Preço / Margem -->
+          <div class="recommend-card pricing">
+            <div class="rec-line"></div>
+            <div class="date-box">
+              <span class="day">Seg</span>
+              <span class="number">26</span>
+            </div>
+
+            <div class="info">
+              <h3>Ajuste de preços 🏷️</h3>
+              <p class="desc">
+                Margem de lucro do arroz caiu — ajuste o preço.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="todo">
+          <div class="head">
+            <h3>Notas</h3>
+            <i class="bx bx-plus"></i>
+            <i class="bx bx-filter"></i>
+          </div>
+          <ul class="todo-list">
+            <li class="completed">
+              <p>Todo List</p>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </li>
+            <li class="completed">
+              <p>Todo List</p>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </li>
+            <li class="not-completed">
+              <p>Todo List</p>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </li>
+            <li class="completed">
+              <p>Todo List</p>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </li>
+            <li class="not-completed">
+              <p>Todo List</p>
+              <i class="bx bx-dots-vertical-rounded"></i>
+            </li>
+          </ul>
+        </div>
+
+        <div class="order">
+          <div class="head">
+            <h3>Top 4 Vendas Recentes</h3>
+
+            <!-- DROPDOWN DE FILTRO -->
+            <div class="filter-dropdown" id="filterDropdown">
+              <ul>
+                <li>Data</li>
+                <li>Produto</li>
+                <li>Intervalo</li>
+                <li>Quantidade</li>
+              </ul>
+            </div>
+
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                
+                <th>Tipo de Pag</th>
+                <th>Preço Unit</th>
+                <th>Qtd</th>
+                <th>Total</th>
+                <th>Data/Hora</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <!--Aqui ficam as vendas -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+    <!-- MAIN -->
+  </section>
+  <!-- CONTENT -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script src="charts.js"></script>
+  <script src="scriptDashboard.js"></script>
+
+</body>
+
+</html>

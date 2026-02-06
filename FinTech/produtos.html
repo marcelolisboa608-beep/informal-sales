@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>AdminHub</title>
+</head>
+
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class="bx bxs-smile"></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+
+			<li>
+				<a href="dashboard.html">
+					<i class="bx bxs-dashboard"></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="produtos.html">
+					<i class="bx bxs-box"></i>
+					<span class="text">Produtos</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="vendas.html">
+					<i class="bx bxs-shopping-bag-alt"></i>
+					<span class="text">Vendas</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="graficos.html">
+					<i class="bx bxs-doughnut-chart"></i>
+					<span class="text">Gráficos e Análises</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="perfil.html">
+					<i class="bx bxs-user-detail"></i>
+					<span class="text">Perfil de Negócio</span>
+				</a>
+			</li>
+
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN PRODUTOS-->
+		<main id="produtos">
+			<div class="head-title">
+				<div class="left">
+					<h1>Produtos</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Produtos</a>
+						</li>
+						<li><i class='bx bx-chevron-right'></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="container-vendas-btns">
+
+					<a href="#" class="btn-download">
+						<i class='bx bx-add-to-queue'></i>
+						<span onclick="toggleProductModal()" class="text">Registar Produto</span>
+					</a>
+
+					<a href="#" class="btn-download">
+						<i class='bx bxs-cloud-download'></i>
+						<span class="text">Exportar Catálogo</span>
+					</a>
+
+				</div>
+
+			</div>
+
+
+			<div class="table-data">
+
+				<div class="order">
+					<div class="head">
+						<h3>Produtos</h3>
+						<i class='bx bx-search'></i>
+						<i class='bx bx-filter' id="filterBtn"></i>
+						<span id="aplicarFonte">filtro</span>
+
+						<!-- DROPDOWN DE FILTRO -->
+						<div class="filter-dropdown" id="filterDropdown">
+							<ul>
+								<li>Data</li>
+								<li>Produto</li>
+								<li>Intervalo</li>
+								<li>Quantidade</li>
+							</ul>
+						</div>
+
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Produto</th>
+								<th>Preço Unit</th>
+								<th>Código</th>
+								<th>Data/Hora</th>
+								<th>Categoria</th>
+								<th>Ativo</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!--Aqui ficam os produtos -->
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+
+			<!-- MODAL REGISTRAR PRODUTO -->
+			<div class="modal-overlay" id="productModal" onclick="closeOnOverlay(event)">
+				<div class="modal-card">
+
+					<!-- FECHAR -->
+					<span class="close-modal" onclick="toggleProductModal()">
+						<i class='bx bx-x'></i>
+					</span>
+
+					<!-- FOTO DO PRODUTO -->
+					<div class="product-photo">
+						<img src="img/no-product-image.jpg" alt="Foto do Produto" id="addPreviewImg">
+						<label class="upload-btn">
+							<i class='bx bxs-camera'></i>
+							<input type="file" hidden onchange="previewImage(event, 'add')">
+						</label>
+					</div>
+
+					<h2>Registrar Produto</h2>
+
+					<form class="product-form">
+						<div class="input-group">
+							<label>Nome do Produto</label>
+							<input type="text" placeholder="Ex: Fanta Laranja 1L">
+						</div>
+
+						<div class="input-group">
+							<label>Categoria</label>
+							<div class="select-wrapper">
+								<select>
+									<option value="Bebidas">Bebidas</option>
+									<option value="Alimentação">Alimentação</option>
+									<option value="Roupas & Acessórios">Roupas & Acessórios</option>
+									<option value="Frescos">Frescos</option>
+									<option value="Higiene e Limpeza">Higiene e Limpeza</option>
+									<option value="Eletrônicos & Acessórios">Eletrônicos & Acessórios</option>
+									<option value="Lanches e Doces">Lanches e Doces</option>
+									<option value="Beleza e Cuidados Pessoais">Beleza e Cuidados Pessoais</option>
+									<option value="Farmácia">Farmácia</option>
+									<option value="Outro">Outro</option>
+								</select>
+								<i class='bx bx-chevron-down'></i>
+							</div>
+						</div>
+
+						<div class="input-group">
+							<label>Código do Produto</label>
+							<input type="text" placeholder="COD-00123">
+						</div>
+
+						<div class="input-group">
+							<label>Preço Unitário (Kz)</label>
+							<input type="number" placeholder="Ex: 450.00">
+						</div>
+
+						<button type="submit" class="btn-save">
+							<i class='bx bxs-package'></i> Salvar Produto
+						</button>
+
+					</form>
+
+				</div>
+			</div>
+
+			<!-- MODAL EDITAR PRODUTO-->
+			<div class="modal-overlay" id="editModal" onclick="closeOnOverlay(event)">
+				<div class="modal-card">
+
+					<!-- FECHAR -->
+					<span class="close-modal" onclick="toggleProductEditModal()">
+						<i class='bx bx-x'></i>
+					</span>
+
+					<!-- FOTO DO PRODUTO -->
+					<div class="product-photo">
+						<img src="img/fanta-laranja-1l.png" alt="Foto do Produto" id="editPreviewImg">
+						<label class="upload-btn">
+							<i class='bx bxs-camera'></i>
+							<input type="file" hidden onchange="previewImage(event, 'edit')">
+						</label>
+					</div>
+
+					<h2>Editar Produto</h2>
+
+					<form class="product-edit-form">
+						<div class="input-group">
+							<label>Nome do Produto</label>
+							<input type="text" placeholder="Ex: Fanta Laranja 1L">
+						</div>
+
+						<div class="input-group">
+							<label>Categoria</label>
+							<div class="select-wrapper">
+								<select>
+									<option value="Bebidas">Bebidas</option>
+									<option value="Alimentação">Alimentação</option>
+									<option value="Roupas & Acessórios">Roupas & Acessórios</option>
+									<option value="Frescos">Frescos</option>
+									<option value="Higiene e Limpeza">Higiene e Limpeza</option>
+									<option value="Eletrônicos & Acessórios">Eletrônicos & Acessórios</option>
+									<option value="Lanches e Doces">Lanches e Doces</option>
+									<option value="Beleza e Cuidados Pessoais">Beleza e Cuidados Pessoais</option>
+									<option value="Farmácia">Farmácia</option>
+									<option value="Outro">Outro</option>
+								</select>
+								<i class='bx bx-chevron-down'></i>
+							</div>
+						</div>
+
+						<div class="input-group">
+							<label>Código do Produto</label>
+							<input type="text" placeholder="COD-00123">
+						</div>
+
+						<div class="input-group">
+							<label>Preço Unitário (Kz)</label>
+							<input type="number" placeholder="Ex: 450.00">
+						</div>
+
+						<button type="submit" class="btn-save">
+							<i class='bx bxs-package'></i> Editar Produto
+						</button>
+
+					</form>
+
+				</div>
+			</div>
+
+
+
+			<div class="table-data centralizar">
+
+				<div class="pagination">
+					<button class="btn1"><img src="img/448-arrow.png" alt="prev">prev</button>
+					<ul>
+						<li class="link active" value="1" onclick="activeLink()">1</li>
+						<li class="link" value="2" onclick="activeLink()">2</li>
+						<li class="link" value="3" onclick="activeLink()">3</li>
+						<li class="link" value="4" onclick="activeLink()">4</li>
+						<li class="link" value="5" onclick="activeLink()">5</li>
+						<li class="link" value="6" onclick="activeLink()">6</li>
+					</ul>
+					<button class="btn2">next<img src="img/448-arrow.png" alt="next"></button>
+				</div>
+
+			</div>
+
+			</div>
+
+		</main>
+		<!-- MAIN PRODUTOS -->
+
+
+	</section>
+	<!-- CONTENT -->
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="script.js"></script>
+	<script src="scriptProdutos.js"></script>
+	<script src="charts.js"></script>
+
+</body>
+
+</html>

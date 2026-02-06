@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>AdminHub</title>
+</head>
+
+<body>
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class="bx bxs-smile"></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+
+			<li>
+				<a href="dashboard.html">
+					<i class="bx bxs-dashboard"></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="produtos.html">
+					<i class="bx bxs-box"></i>
+					<span class="text">Produtos</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="vendas.html">
+					<i class="bx bxs-shopping-bag-alt"></i>
+					<span class="text">Vendas</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="graficos.html">
+					<i class="bx bxs-doughnut-chart"></i>
+					<span class="text">Gráficos e Análises</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="perfil.html">
+					<i class="bx bxs-user-detail"></i>
+					<span class="text">Perfil de Negócio</span>
+				</a>
+			</li>
+
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN GRÁFICOS E ANÁLISE-->
+		<main id="graficos-analise">
+
+			<div class="head-title">
+				<div class="left">
+					<h1>Gráficos e Análises</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Gráficos e Análises</a>
+						</li>
+						<li>
+							<i class='bx bx-chevron-right'></i>
+						</li>
+						<li>
+							<a href="graficos.html" class="graficos-analise-submenu ">
+								Resumo Rápido
+							</a>
+						</li>
+						<li>
+							<a href="graficos-principais.html" class="graficos-analise-submenu">
+								Gráficos Principais
+							</a>
+						</li>
+						<li>
+							<a href="graficos-comparacoes.html" class="graficos-analise-submenu active">
+								Comparações
+							</a>
+						</li>
+						<li>
+							<a href="graficos-predicoes.html" class="graficos-analise-submenu">
+								Predições
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="container-vendas-btns">
+
+					<a id="btn-grafico-comparativo" href="#" class="btn-download btn-graficos ocultar">
+						<i class='bx bxs-analyse'></i>
+						<span class="text">Gerar gráfico comparativo</span>
+					</a>
+
+					<a id="btn-grafico-personalizado" href="#" class="btn-download btn-graficos ocultar">
+						<i class='bx bxs-analyse'></i>
+						<span class="text">Gerar gráfico personalizado</span>
+					</a>
+
+					<a id="btn-grafico-preditivo" href="#" class="btn-download btn-graficos ocultar">
+						<i class='bx bxs-analyse'></i>
+						<span class="text">Gerar gráfico preditivo</span>
+					</a>
+
+					<a href="#" class="btn-download">
+						<i class='bx bxs-cloud-download'></i>
+						<span class="text">Exportar PDF</span>
+					</a>
+
+				</div>
+
+			</div>
+
+			<!-- Comparações - Início-->
+			<div id="comparacoes-submenu" class="table-data graficos-principais-pagina">
+
+				<div class="chart">
+					<h2>Semana Actual x Semana Passada</h2>
+					<i class='bx bx-edit organizar'></i>
+					<canvas id="comparacao-semanas"></canvas>
+
+					<div class="recommend-cards">
+						<!-- CARD 1 - Reposição de estoque -->
+						<div class="recommend-card stock">
+							<div class="rec-line"></div>
+							<div class="date-box">
+								<span class="day">Seg</span>
+								<span class="number">26</span>
+							</div>
+
+							<div class="info">
+								<h3>Crescimento semanal 📈</h3>
+								<p class="desc">A semana atual teve crescimento constante em relação à semana passada.
+									Ganhos aumentaram em média 18%.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="chart">
+					<h2>Mês Actual x Mês Passado</h2>
+					<i class='bx bx-edit organizar'></i>
+					<canvas id="comparacao-meses"></canvas>
+
+					<div class="recommend-cards">
+						<!-- CARD 4 - Preço / Margem -->
+						<div class="recommend-card pricing">
+							<div class="rec-line"></div>
+							<div class="date-box">
+								<span class="day">Seg</span>
+								<span class="number">26</span>
+							</div>
+
+							<div class="info">
+								<h3>Pico de Gastos ⚡</h3>
+								<p class="desc">A 5ª semana apresentou o maior aumento (+7,7%). Verifique se houve
+									campanhas ou compras específicas que geraram esse crescimento.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="chart">
+					<h2>Crescimento por categoria - Mês Actual x Mês Passado</h2>
+					<i class='bx bx-edit organizar'></i>
+					<canvas id="crescimento-categoria-comparacao-meses"></canvas>
+
+					<div class="recommend-cards">
+						<!-- CARD 2 - Tendências de vendas -->
+						<div class="recommend-card trending">
+							<div class="rec-line"></div>
+							<div class="date-box">
+								<span class="day">Seg</span>
+								<span class="number">26</span>
+							</div>
+
+							<div class="info">
+								<h3>Bebidas 🍹</h3>
+								<p class="desc">As vendas da categoria Bebidas aumentaram 22% em relação ao mês passado.
+									Considere aumentar o estoque ou criar promoções para manter o crescimento.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Comparacoes - Fim-->
+
+			<div class="head-title">
+				<div class="left">
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Vendas</a>
+						</li>
+						<li><i class='bx bx-chevron-right'></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+			<div class="table-data">
+
+				<div class="order">
+					<div class="head">
+						<h3>Vendas Recentes</h3>
+						<i class='bx bx-search'></i>
+						<i class='bx bx-filter' id="filterBtn2"></i>
+						<span id="aplicarFonte">filtro</span>
+
+						<!-- DROPDOWN DE FILTRO -->
+						<div class="filter-dropdown" id="filterDropdown2">
+							<ul>
+								<li>Data</li>
+								<li>Produto</li>
+								<li>Intervalo</li>
+								<li>Quantidade</li>
+							</ul>
+						</div>
+
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Produto</th>
+								<th>Tipo de Pag</th>
+								<th>Qtd</th>
+								<th>Preço Unit</th>
+								<th>Total</th>
+								<th>Data/Hora</th>
+								<th>Categoria</th>
+							</tr>
+						</thead>
+						<tbody>
+
+
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>Fanta 1L</p>
+								</td>
+								<td>
+									<span class="pagamento tpa">TPA</span>
+								</td>
+								<td>3</td>
+								<td>800 Kz</td>
+								<td>2400 Kz</td>
+
+								<td>01-10-2023 14:32</td>
+								<td><span class="category bebidas">Bebidas</span></td>
+							</tr>
+
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>Arroz 5Kg</p>
+								</td>
+								<td>
+									<span class="pagamento dinheiro">Dinheiro</span>
+								</td>
+								<td>1</td>
+								<td>6500 Kz</td>
+								<td>6500 Kz</td>
+
+								<td>01-10-2023 10:15</td>
+								<td><span class="category alimentos">Alimentos</span></td>
+							</tr>
+
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>Sabonete Dove</p>
+								</td>
+								<td>
+									<span class="pagamento transferencia">Transferência</span>
+								</td>
+								<td>6</td>
+								<td>450 Kz</td>
+								<td>2700 Kz</td>
+
+								<td>30-09-2023 18:20</td>
+								<td><span class="category higiene">Higiene</span></td>
+							</tr>
+
+							<tr>
+								<td>
+									<img src="img/people.png">
+									<p>Leite Nido</p>
+								</td>
+								<td>
+									<span class="pagamento mobile">Mobile Money</span>
+								</td>
+								<td>2</td>
+								<td>3200 Kz</td>
+								<td>6400 Kz</td>
+
+								<td>29-09-2023 09:00</td>
+								<td><span class="category lacteos">Lácteos</span></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+
+			<div class="table-data centralizar">
+
+				<div class="pagination">
+					<button class="btn1"><img src="img/448-arrow.png" alt="prev">prev</button>
+					<ul>
+						<li class="link active" value="1" onclick="activeLink()">1</li>
+						<li class="link" value="2" onclick="activeLink()">2</li>
+						<li class="link" value="3" onclick="activeLink()">3</li>
+						<li class="link" value="4" onclick="activeLink()">4</li>
+						<li class="link" value="5" onclick="activeLink()">5</li>
+						<li class="link" value="6" onclick="activeLink()">6</li>
+					</ul>
+					<button class="btn2">next<img src="img/448-arrow.png" alt="next"></button>
+				</div>
+
+			</div>
+
+			</div>
+
+
+		</main>
+		<!-- MAIN GRÁFICOS E ANÁLISES -->
+
+
+	</section>
+	<!-- CONTENT -->
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="script.js"></script>
+	<script src="charts.js"></script>
+	<script src="scriptGraficosComparacoes.js"></script>
+
+</body>
+
+</html>
