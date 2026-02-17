@@ -182,7 +182,7 @@ const resumoIA = gerarResumoVendasUltimos7Dias(labels1, data1);
 console.log(resumoIA);
 
 async function gerarExplicacao(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-vendas-ultimos-7-dias", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-vendas-ultimos-7-dias", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)
@@ -255,7 +255,7 @@ console.log(resumoIA1);
 
 
 async function gerarExplicacao1(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-top5-produtos-mais-vendidos", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-top5-produtos-mais-vendidos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)
@@ -329,7 +329,7 @@ console.log(resumoIA2);
 
 
 async function gerarExplicacao2(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-top5-produtos-mais-lucrativos", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-top5-produtos-mais-lucrativos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)
@@ -402,7 +402,7 @@ const resumoIA3 = gerarResumoTop5CategoriasLucrativas(labels4, data4);
 console.log(resumoIA3);
 
 async function gerarExplicacao3(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-top5-categorias-mais-lucrativas", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-top5-categorias-mais-lucrativas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)

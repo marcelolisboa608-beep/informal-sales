@@ -132,7 +132,7 @@ if (ctx1) {
         },
         options: {
             responsive: true,
-             // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -176,7 +176,8 @@ if (ctx2) {
             }]
         },
         options: {
-            responsive: true, // ⚡ permite ajustar altura no container
+            responsive: true,
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -291,7 +292,7 @@ if (ctx4) {
         options: {
             indexAxis: 'y',
             responsive: true,
-             // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -306,10 +307,10 @@ if (ctx4) {
             },
             scales: {
                 x: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo X
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo X
                 },
                 y: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 }
             }
         }
@@ -460,7 +461,7 @@ if (ctx6) {
         },
         options: {
             responsive: true,
-             // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -475,10 +476,10 @@ if (ctx6) {
             },
             scales: {
                 x: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo X
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo X
                 },
                 y: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 }
             }
         }
@@ -586,7 +587,7 @@ if (ctx7) {
         },
         options: {
             responsive: true,
-             // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -601,10 +602,10 @@ if (ctx7) {
             },
             scales: {
                 x: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo X
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo X
                 },
                 y: {
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 }
             }
         }
@@ -687,7 +688,7 @@ if (ctx8) {
         options: {
             indexAxis: 'y', // barras horizontais
             responsive: true,
-             // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             layout: {
                 padding: {
                     top: 10,
@@ -715,14 +716,14 @@ if (ctx8) {
                 x: {
                     title: { display: true, text: "Crescimento (%)" },
                     ticks: {
-                        font: { size: 12 }, // reduz tamanho do texto eixo X
+                        font: { size: 9 }, // reduz tamanho do texto eixo X
                         callback: value => value + "%"
                     },
                     beginAtZero: true
                 },
                 y: {
                     title: { display: true, text: "Categorias" },
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 }
             }
         }
@@ -779,7 +780,7 @@ if (ctx9) {
         },
         options: {
             responsive: true,
-          // ⚡ permite ajustar altura no container
+            maintainAspectRatio: false, // ⚡ permite ajustar altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -795,12 +796,12 @@ if (ctx9) {
             scales: {
                 x: {
                     title: { display: true, text: 'Dias' },
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo X
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo X
                 },
                 y: {
                     title: { display: true, text: 'Vendas (Kz)' },
                     beginAtZero: false,
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 }
             }
         }
@@ -852,7 +853,7 @@ if (ctx10) {
         },
         options: {
             responsive: true,
-             // ⚡ ajusta altura no container
+            maintainAspectRatio: false, // ⚡ ajusta altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -880,11 +881,11 @@ if (ctx10) {
                 y: {
                     beginAtZero: true,
                     title: { display: true, text: 'Quantidade / Receita prevista' },
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo Y
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo Y
                 },
                 x: {
                     title: { display: true, text: 'Produtos / Categorias' },
-                    ticks: { font: { size: 12 } } // reduz tamanho do texto eixo X
+                    ticks: { font: { size: 9 } } // reduz tamanho do texto eixo X
                 }
             }
         }
@@ -945,7 +946,7 @@ if (ctx11) {
         },
         options: {
             responsive: true,
-             // ⚡ ajusta altura no container
+            maintainAspectRatio: false, // ⚡ ajusta altura no container
             plugins: {
                 legend: {
                     position: 'bottom', // mais espaço em telas pequenas
@@ -965,7 +966,7 @@ if (ctx11) {
                     max: 100,
                     ticks: {
                         stepSize: 20,
-                        font: { size: 12 }, // reduz tamanho do texto radial
+                        font: { size: 9 }, // reduz tamanho do texto radial
                         callback: value => value + '%'
                     }
                 }

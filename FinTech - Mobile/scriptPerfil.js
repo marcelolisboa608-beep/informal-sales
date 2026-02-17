@@ -319,62 +319,123 @@ function atualizarVendasMensais() {
 atualizarVendasMensais();
 
 
+//EXTRAIR DIA DA SEMANA MAIS LUCRATIVO , PRODUTO MAIS VENDIDO E PRODUTO MAIS LUCRATIVO
+//_______________________________________________________________
+
+// Converter data da venda em objeto Date
+function parseDataVenda(dataHora) {
+    const [data, hora] = dataHora.split(" ");
+    const [dia, mes, ano] = data.split("-");
+    return new Date(`${ano}-${mes}-${dia}T${hora}:00`);
+}
+
+// Obter dia da semana em português
+function getDiaSemana(data) {
+    const dias = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+    return dias[data.getDay()];
+}
+
+// Obter intervalo da semana atual (segunda → domingo)
+function getIntervaloSemanaAtual() {
+    const hoje = new Date();
+    const diaSemana = hoje.getDay(); // 0 = domingo, 1 = segunda, ..., 6 = sábado
+    const segunda = new Date(hoje);
+    segunda.setDate(hoje.getDate() - (diaSemana === 0 ? 6 : diaSemana - 1)); // Ajuste para segunda
+    segunda.setHours(0, 0, 0, 0); // início do dia
+    const domingo = new Date(segunda);
+    domingo.setDate(segunda.getDate() + 6);
+    domingo.setHours(23, 59, 59, 999); // fim do dia
+    return { inicio: segunda, fim: domingo };
+}
+
+function atualizarInsightsSemana(vendas) {
+    const { inicio, fim } = getIntervaloSemanaAtual();
+
+    // Filtrar vendas da semana atual
+    const vendasSemana = vendas.filter(v => {
+        const dataVenda = parseDataVenda(v.dataHora);
+        return dataVenda >= inicio && dataVenda <= fim;
+    });
+
+    // ---------- DIA MAIS LUCRATIVO ----------
+    const lucroPorDia = {};
+    vendasSemana.forEach(v => {
+        const dia = getDiaSemana(parseDataVenda(v.dataHora));
+        lucroPorDia[dia] = (lucroPorDia[dia] || 0) + v.precoTotal;
+    });
+    const diaMaisLucrativo = Object.entries(lucroPorDia)
+        .sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
+
+    // ---------- PRODUTO MAIS VENDIDO ----------
+    const quantidadePorProduto = {};
+    vendas.forEach(v => { // aqui usamos todas as vendas
+        quantidadePorProduto[v.nomeProduto] = (quantidadePorProduto[v.nomeProduto] || 0) + v.quantidade;
+    });
+    const produtoMaisVendido = Object.entries(quantidadePorProduto)
+        .sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
+
+    // ---------- PRODUTO MAIS LUCRATIVO ----------
+    const lucroPorProduto = {};
+    vendas.forEach(v => { // todas as vendas
+        lucroPorProduto[v.nomeProduto] = (lucroPorProduto[v.nomeProduto] || 0) + v.precoTotal;
+    });
+    const produtoMaisLucrativo = Object.entries(lucroPorProduto)
+        .sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
+
+    // ---------- ATUALIZAR HTML ----------
+    const boxInfo = document.querySelectorAll(".box-info li");
+    if (boxInfo.length >= 3) {
+        boxInfo[0].querySelector("h3").textContent = diaMaisLucrativo;
+        boxInfo[1].querySelector("h3").textContent = produtoMaisVendido;
+        boxInfo[2].querySelector("h3").textContent = produtoMaisLucrativo;
+    }
+}
 
 
+atualizarInsightsSemana(vendas);
 
 
 
 //Renderizar Vendas
 //////////////////////////////////////////
 // ---------------------------------------------
+
 // Referência ao tbody da tabela
 const tbodyVendasRecentes = document.querySelector(".order table tbody");
 
-
-// Função para converter "DD-MM-YYYY HH:MM" em objeto Date
-function parseDataHora2(dataHoraStr) {
-    const [data, hora] = dataHoraStr.split(" ");
-    const [dia, mes, ano] = data.split("-").map(Number);
-    const [horas, minutos] = hora.split(":").map(Number);
-    return new Date(ano, mes - 1, dia, horas, minutos);
-}
-
-// Função para obter as 4 vendas mais recentes
-function renderVendasRecentes() {
+// Função para renderizar as 4 vendas mais lucrativas
+function renderVendasMaisLucrativas() {
     tbodyVendasRecentes.innerHTML = ""; // limpa tabela
 
-    // Ordenar vendas pela dataHora mais recente
-    const vendasOrdenadas = [...vendas].sort((a, b) => {
-        const dateA = parseDataHora2(a.dataHora);
-        const dateB = parseDataHora2(b.dataHora);
-        return dateB - dateA; // mais recente primeiro
-    });
+    // Ordenar vendas pelo precoTotal (mais lucrativas primeiro)
+    const vendasOrdenadas = [...vendas].sort((a, b) => b.precoTotal - a.precoTotal);
 
-    // Pegar apenas os 4 primeiros (mais recentes)
-    const recentes = vendasOrdenadas.slice(0, 4);
+    // Pegar apenas os 4 primeiros (mais lucrativos)
+    const topLucrativas = vendasOrdenadas.slice(0, 4);
 
-    recentes.forEach(venda => {
+    topLucrativas.forEach(venda => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td data-label="Produto">
                 <img src="${venda.img}" alt="${venda.nomeProduto}">
                 <p>${venda.nomeProduto}</p>
             </td>
-            <td data-label="Pagamento">
+            <td data-label="ID da Venda"><span class="codigo-produto">${venda.ID}</span></td>
+            <td data-label="Tipo de Pag">
                 <span class="pagamento ${getTipoPagamentoClass(venda.tipoPagamento)}">${venda.tipoPagamento}</span>
             </td>
-            <td data-label="Preço Unit">${venda.precoUnit.toLocaleString()} Kz</td>
             <td data-label="Qtd">${venda.quantidade}</td>
+            <td data-label="Preço Unit">${venda.precoUnit.toLocaleString()} Kz</td>
             <td data-label="Total"><span class="codigo-produto">${venda.precoTotal.toLocaleString()} Kz</span></td>
-            <td data-label="Data/Hora" >${venda.dataHora}</td>
+            <td data-label="Data/Hora">${venda.dataHora}</td>
+            <td data-label="Categoria"><span class="category ${getCategoriaClass(venda.categoria)}">${venda.categoria}</span></td>
         `;
         tbodyVendasRecentes.appendChild(tr);
     });
 }
 
-// Inicializa as 4 vendas mais recentes
-renderVendasRecentes();
-
+// Inicializa as 4 vendas mais lucrativas
+renderVendasMaisLucrativas();
 
 
 
@@ -389,7 +450,7 @@ renderVendasRecentes();
 // ---------------------------------------------
 
 async function gerarRecomendacoesGerais(payload) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/recomendacoes-gerais", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/recomendacoes-gerais", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -750,3 +811,11 @@ const payloadRecomendacoes = {
         console.error("Erro ao gerar recomendações gerais:", err);
     }
 })();
+
+
+
+
+
+
+
+

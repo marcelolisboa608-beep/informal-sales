@@ -254,7 +254,7 @@ if (!vendas) {
 			quantidade: 2,
 			precoUnit: 450,
 			precoTotal: 900,
-			dataHora: "24-01-2026 09:00",
+			dataHora: "09-02-2026 09:00",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -265,7 +265,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 6500,
 			precoTotal: 6500,
-			dataHora: "24-01-2026 09:30",
+			dataHora: "09-02-2026 09:30",
 			tipoPagamento: "Transferência"
 		},
 		{
@@ -276,7 +276,7 @@ if (!vendas) {
 			quantidade: 3,
 			precoUnit: 1500,
 			precoTotal: 4500,
-			dataHora: "24-01-2026 10:00",
+			dataHora: "09-02-2026 10:00",
 			tipoPagamento: "TPA"
 		},
 		{
@@ -287,7 +287,7 @@ if (!vendas) {
 			quantidade: 2,
 			precoUnit: 2500,
 			precoTotal: 5000,
-			dataHora: "24-01-2026 10:30",
+			dataHora: "09-02-2026 10:30",
 			tipoPagamento: "Mobile Money"
 		},
 		{
@@ -298,7 +298,7 @@ if (!vendas) {
 			quantidade: 5,
 			precoUnit: 1200,
 			precoTotal: 6000,
-			dataHora: "24-01-2026 11:00",
+			dataHora: "09-02-2026 11:00",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -309,7 +309,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 1500,
 			precoTotal: 1500,
-			dataHora: "24-01-2026 11:30",
+			dataHora: "09-02-2026 11:30",
 			tipoPagamento: "TPA"
 		},
 		{
@@ -320,7 +320,7 @@ if (!vendas) {
 			quantidade: 4,
 			precoUnit: 350,
 			precoTotal: 1400,
-			dataHora: "24-01-2026 12:00",
+			dataHora: "09-02-2026 12:00",
 			tipoPagamento: "Transferência"
 		},
 		{
@@ -331,7 +331,7 @@ if (!vendas) {
 			quantidade: 2,
 			precoUnit: 1200,
 			precoTotal: 2400,
-			dataHora: "24-01-2026 12:30",
+			dataHora: "09-02-2026 12:30",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -342,7 +342,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 300,
 			precoTotal: 300,
-			dataHora: "24-01-2026 13:00",
+			dataHora: "09-02-2026 13:00",
 			tipoPagamento: "Mobile Money"
 		},
 		{
@@ -353,7 +353,7 @@ if (!vendas) {
 			quantidade: 6,
 			precoUnit: 500,
 			precoTotal: 3000,
-			dataHora: "24-01-2026 13:30",
+			dataHora: "09-02-2026 13:30",
 			tipoPagamento: "TPA"
 		},
 		{
@@ -364,7 +364,7 @@ if (!vendas) {
 			quantidade: 2,
 			precoUnit: 850,
 			precoTotal: 1700,
-			dataHora: "24-01-2026 14:00",
+			dataHora: "09-02-2026 14:00",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -375,7 +375,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 800,
 			precoTotal: 800,
-			dataHora: "24-01-2026 14:30",
+			dataHora: "09-02-2026 14:30",
 			tipoPagamento: "Transferência"
 		},
 		{
@@ -386,7 +386,7 @@ if (!vendas) {
 			quantidade: 3,
 			precoUnit: 850,
 			precoTotal: 2550,
-			dataHora: "24-01-2026 15:00",
+			dataHora: "09-02-2026 15:00",
 			tipoPagamento: "TPA"
 		},
 		{
@@ -397,7 +397,7 @@ if (!vendas) {
 			quantidade: 2,
 			precoUnit: 500,
 			precoTotal: 1000,
-			dataHora: "24-01-2026 15:30",
+			dataHora: "09-02-2026 15:30",
 			tipoPagamento: "Mobile Money"
 		},
 		{
@@ -408,7 +408,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 2000,
 			precoTotal: 2000,
-			dataHora: "24-01-2026 16:00",
+			dataHora: "09-02-2026 16:00",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -419,7 +419,7 @@ if (!vendas) {
 			quantidade: 5,
 			precoUnit: 400,
 			precoTotal: 2000,
-			dataHora: "24-01-2026 16:30",
+			dataHora: "09-02-2026 16:30",
 			tipoPagamento: "TPA"
 		},
 		{
@@ -430,7 +430,7 @@ if (!vendas) {
 			quantidade: 1,
 			precoUnit: 3500,
 			precoTotal: 3500,
-			dataHora: "24-01-2026 17:00",
+			dataHora: "10-02-2026 17:00",
 			tipoPagamento: "Transferência"
 		},
 		{
@@ -441,7 +441,7 @@ if (!vendas) {
 			quantidade: 10,
 			precoUnit: 400,
 			precoTotal: 4000,
-			dataHora: "24-01-2026 17:30",
+			dataHora: "10-02-2026 17:30",
 			tipoPagamento: "Dinheiro"
 		},
 		{
@@ -452,7 +452,7 @@ if (!vendas) {
 			quantidade: 6,
 			precoUnit: 120,
 			precoTotal: 720,
-			dataHora: "24-01-2026 18:00",
+			dataHora: "10-02-2026 18:00",
 			tipoPagamento: "Mobile Money"
 		},
 		{
@@ -463,7 +463,7 @@ if (!vendas) {
 			quantidade: 4,
 			precoUnit: 150,
 			precoTotal: 600,
-			dataHora: "24-01-2026 18:30",
+			dataHora: "10-02-2026 18:30",
 			tipoPagamento: "TPA"
 		}
 	];

@@ -416,19 +416,19 @@ function renderVendasMaisLucrativas() {
     topLucrativas.forEach(venda => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>
+            <td data-label="Produto">
                 <img src="${venda.img}" alt="${venda.nomeProduto}">
                 <p>${venda.nomeProduto}</p>
             </td>
-            <td><span class="codigo-produto">${venda.ID}</span></td>
-            <td>
+            <td data-label="ID da Venda"><span class="codigo-produto">${venda.ID}</span></td>
+            <td data-label="Tipo de Pag">
                 <span class="pagamento ${getTipoPagamentoClass(venda.tipoPagamento)}">${venda.tipoPagamento}</span>
             </td>
-            <td>${venda.quantidade}</td>
-            <td>${venda.precoUnit.toLocaleString()} Kz</td>
-            <td><span class="codigo-produto">${venda.precoTotal.toLocaleString()} Kz</span></td>
-            <td>${venda.dataHora}</td>
-            <td><span class="category ${getCategoriaClass(venda.categoria)}">${venda.categoria}</span></td>
+            <td data-label="Qtd">${venda.quantidade}</td>
+            <td data-label="Preço Unit">${venda.precoUnit.toLocaleString()} Kz</td>
+            <td data-label="Total"><span class="codigo-produto">${venda.precoTotal.toLocaleString()} Kz</span></td>
+            <td data-label="Data/Hora">${venda.dataHora}</td>
+            <td data-label="Categoria"><span class="category ${getCategoriaClass(venda.categoria)}">${venda.categoria}</span></td>
         `;
         tbodyVendasRecentes.appendChild(tr);
     });
@@ -450,7 +450,7 @@ renderVendasMaisLucrativas();
 // ---------------------------------------------
 
 async function gerarRecomendacoesGerais(payload) {
-    const res = await fetch("http://localhost:3000/api/recomendacoes-gerais", {
+    const res = await fetch("https://api-informal-sales.onrender.com/api/recomendacoes-gerais", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)

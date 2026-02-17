@@ -12,7 +12,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>AdminHub</title>
+	<title>Informal Sales</title>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class="bx bxs-smile"></i>
-			<span class="text">AdminHub</span>
+			<img src="img/informal_sales_logo.jpg" alt="Logo" class="logo-sidebar" />
+			<span class="text">Informal Sales</span>
 		</a>
 		<ul class="side-menu top">
 
@@ -159,7 +159,10 @@
 				<div class="chart">
 					<h2>Semana Actual x Semana Passada</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="comparacao-semanas"></canvas>
+
+					<div class="chart-container">
+						<canvas id="comparacao-semanas"></canvas>
+					</div>
 
 					<div class="recommend-cards">
 						<!-- CARD 1 - Reposição de estoque -->
@@ -182,7 +185,11 @@
 				<div class="chart">
 					<h2>Mês Actual x Mês Passado</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="comparacao-meses"></canvas>
+
+					<div class="chart-container">
+						<canvas id="comparacao-meses"></canvas>
+
+					</div>
 
 					<div class="recommend-cards">
 						<!-- CARD 4 - Preço / Margem -->
@@ -205,7 +212,10 @@
 				<div class="chart">
 					<h2>Crescimento por categoria - Mês Actual x Mês Passado</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="crescimento-categoria-comparacao-meses"></canvas>
+
+					<div class="chart-container">
+						<canvas id="crescimento-categoria-comparacao-meses"></canvas>
+					</div>
 
 					<div class="recommend-cards">
 						<!-- CARD 2 - Tendências de vendas -->
@@ -236,7 +246,7 @@
 						</li>
 						<li><i class='bx bx-chevron-right'></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active graficos-analise-submenu" href="#">Home</a>
 						</li>
 					</ul>
 				</div>
@@ -249,9 +259,10 @@
 				<div class="order">
 					<div class="head">
 						<h3>Vendas Recentes</h3>
-						<i class='bx bx-search'></i>
-						<i class='bx bx-filter' id="filterBtn2"></i>
-						<span id="aplicarFonte">filtro</span>
+						<div class="right-icons-v">
+							<i class='bx bx-search'></i>
+							<i class='bx bx-filter' id="filterBtn"></i>
+						</div>
 
 						<!-- DROPDOWN DE FILTRO -->
 						<div class="filter-dropdown" id="filterDropdown2">
@@ -264,10 +275,11 @@
 						</div>
 
 					</div>
-					<table>
+					<table class="table-vendas">
 						<thead>
 							<tr>
 								<th>Produto</th>
+								<th>ID da Venda</th>
 								<th>Tipo de Pag</th>
 								<th>Qtd</th>
 								<th>Preço Unit</th>

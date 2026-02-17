@@ -114,12 +114,12 @@
 							</a>
 						</li>
 						<li>
-							<a href="graficos-comparacoes.html" class="graficos-analise-submenu">
+							<a href="graficos-comparacoes.html" class="graficos-analise-submenu active">
 								Comparações
 							</a>
 						</li>
 						<li>
-							<a href="graficos-predicoes.html" class="graficos-analise-submenu active">
+							<a href="graficos-predicoes.html" class="graficos-analise-submenu">
 								Predições
 							</a>
 						</li>
@@ -153,16 +153,15 @@
 
 			</div>
 
-
-
-			<!-- Predicoes - Início-->
-			<div id="predicoes-submenu" class="table-data graficos-principais-pagina ">
+			<!-- Comparações - Início-->
+			<div id="comparacoes-submenu" class="table-data graficos-principais-pagina">
 
 				<div class="chart">
-					<h2>Vendas Gerais - Próximos 7 Dias</h2>
+					<h2>Semana Actual x Semana Passada</h2>
+					<i class='bx bx-edit organizar'></i>
 
-					<div class="chart-container-1">
-						<canvas class="chart-container-1" id="proximos-7-dias"></canvas>
+					<div class="chart-container">
+						<canvas id="comparacao-semanas"></canvas>
 					</div>
 
 					<div class="recommend-cards">
@@ -180,45 +179,16 @@
 									Ganhos aumentaram em média 18%.</p>
 							</div>
 						</div>
-
-						<!-- CARD 2 - Tendências de vendas -->
-						<div class="recommend-card trending">
-							<div class="rec-line"></div>
-							<div class="date-box">
-								<span class="day">Seg</span>
-								<span class="number">26</span>
-							</div>
-
-							<div class="info">
-								<h3>Aumento de vendas 📈</h3>
-								<p class="desc">Sexta-feira tem 40% mais vendas — considere promoções.</p>
-							</div>
-						</div>
-
-						<!-- CARD 3 - Clima -->
-						<div class="recommend-card weather">
-							<div class="rec-line"></div>
-							<div class="date-box">
-								<span class="day">Seg</span>
-								<span class="number">26</span>
-							</div>
-
-							<div class="info">
-								<h3>Clima favorável 🌦️</h3>
-								<p class="desc">Vai fazer calor — bebidas geladas tendem a vender mais.</p>
-							</div>
-						</div>
-
-
 					</div>
-
 				</div>
 
 				<div class="chart">
-					<h2>Produtos - Variação prevista</h2>
+					<h2>Mês Actual x Mês Passado</h2>
+					<i class='bx bx-edit organizar'></i>
 
-					<div class="chart-container-1">
-						<canvas class="chart-container-1" id="produtos-variacao-prevista"></canvas>
+					<div class="chart-container">
+						<canvas id="comparacao-meses"></canvas>
+
 					</div>
 
 					<div class="recommend-cards">
@@ -231,11 +201,23 @@
 							</div>
 
 							<div class="info">
-								<h3>Ajuste de preços 🏷️</h3>
-								<p class="desc">Margem de lucro do arroz caiu — ajuste o preço.</p>
+								<h3>Pico de Gastos ⚡</h3>
+								<p class="desc">A 5ª semana apresentou o maior aumento (+7,7%). Verifique se houve
+									campanhas ou compras específicas que geraram esse crescimento.</p>
 							</div>
 						</div>
+					</div>
+				</div>
 
+				<div class="chart">
+					<h2>Crescimento por categoria - Mês Actual x Mês Passado</h2>
+					<i class='bx bx-edit organizar'></i>
+
+					<div class="chart-container-big">
+						<canvas id="crescimento-categoria-comparacao-meses"></canvas>
+					</div>
+
+					<div class="recommend-cards">
 						<!-- CARD 2 - Tendências de vendas -->
 						<div class="recommend-card trending">
 							<div class="rec-line"></div>
@@ -245,146 +227,16 @@
 							</div>
 
 							<div class="info">
-								<h3>Aumento de vendas 📈</h3>
-								<p class="desc">Sexta-feira tem 40% mais vendas — considere promoções.</p>
-							</div>
-						</div>
-
-						<!-- CARD 1 - Reposição de estoque -->
-						<div class="recommend-card stock">
-							<div class="rec-line"></div>
-							<div class="date-box">
-								<span class="day">Seg</span>
-								<span class="number">26</span>
-							</div>
-
-							<div class="info">
-								<h3>Reposição de estoque 🛒</h3>
-								<p class="desc">As vendas de Fanta 1L aumentaram 25% — reponha estoque.</p>
+								<h3>Bebidas 🍹</h3>
+								<p class="desc">As vendas da categoria Bebidas aumentaram 22% em relação ao mês passado.
+									Considere aumentar o estoque ou criar promoções para manter o crescimento.</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="chart">
-					<h2>Top 3 Produtos com mais potencial</h2>
-
-					<div class="chart-container-2">
-						<canvas id="produtos-3-mais-potencial"></canvas>
-					</div>
-
-
-					<div class="recommend-cards ajustarUrgente">
-						<!-- CARD 4 - Preço / Margem -->
-						<div class="recommend-card pricing">
-							<div class="rec-line"></div>
-							<div class="date-box">
-								<span class="day">Seg</span>
-								<span class="number">26</span>
-							</div>
-
-							<div class="info">
-								<h3>Ajuste de preços 🏷️</h3>
-								<p class="desc">Margem de lucro do arroz caiu — ajuste o preço.</p>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="todo">
-
-					<div class="head">
-						<h3>Notas</h3>
-
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded'></i>
-						</li>
-					</ul>
-
-				</div>
-
-
-				<div class="recommend-cards">
-					<h2>Sugestões</h2>
-
-					<!-- CARD 1 - Reposição de estoque -->
-					<div class="recommend-card stock">
-						<div class="rec-line"></div>
-						<div class="date-box">
-							<span class="day">Seg</span>
-							<span class="number">26</span>
-						</div>
-
-						<div class="info">
-							<h3>Reposição de estoque 🛒</h3>
-							<p class="desc">As vendas de Fanta 1L aumentaram 25% — reponha estoque.</p>
-						</div>
-					</div>
-
-					<!-- CARD 2 - Tendências de vendas -->
-					<div class="recommend-card trending">
-						<div class="rec-line"></div>
-						<div class="date-box">
-							<span class="day">Seg</span>
-							<span class="number">26</span>
-						</div>
-
-						<div class="info">
-							<h3>Aumento de vendas 📈</h3>
-							<p class="desc">Sexta-feira tem 40% mais vendas — considere promoções.</p>
-						</div>
-					</div>
-
-					<!-- CARD 3 - Clima -->
-					<div class="recommend-card weather">
-						<div class="rec-line"></div>
-						<div class="date-box">
-							<span class="day">Seg</span>
-							<span class="number">26</span>
-						</div>
-
-						<div class="info">
-							<h3>Clima favorável 🌦️</h3>
-							<p class="desc">Vai fazer calor — bebidas geladas tendem a vender mais.</p>
-						</div>
-					</div>
-
-					<!-- CARD 4 - Preço / Margem -->
-					<div class="recommend-card pricing">
-						<div class="rec-line"></div>
-						<div class="date-box">
-							<span class="day">Seg</span>
-							<span class="number">26</span>
-						</div>
-
-						<div class="info">
-							<h3>Ajuste de preços 🏷️</h3>
-							<p class="desc">Margem de lucro do arroz caiu — ajuste o preço.</p>
-						</div>
-					</div>
-
-				</div>
-
 
 			</div>
-			<!-- Predicoes - Fim-->
-
+			<!-- Comparacoes - Fim-->
 
 			<div class="head-title">
 				<div class="left">
@@ -407,7 +259,6 @@
 				<div class="order">
 					<div class="head">
 						<h3>Vendas Recentes</h3>
-
 						<div class="right-icons-v">
 							<i class='bx bx-search'></i>
 							<i class='bx bx-filter' id="filterBtn"></i>
@@ -540,7 +391,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="script.js"></script>
 	<script src="charts.js"></script>
-	<script src="scriptGraficosPredicoes.js"></script>
+	<script src="scriptGraficosComparacoes.js"></script>
 
 </body>
 

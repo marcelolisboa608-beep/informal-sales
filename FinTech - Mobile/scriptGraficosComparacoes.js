@@ -168,7 +168,7 @@ const resumoIA = gerarResumoComparacaoSemanal(
 );
 
 async function gerarExplicacao(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicar-semana", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicar-semana", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)
@@ -229,7 +229,7 @@ console.log(resumoIA1);
 
 
 async function gerarExplicacaoComparacaoMensal(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-mes", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-mes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)
@@ -286,7 +286,7 @@ console.log(resumoIA2);
 
 
 async function gerarExplicacaoCrescimentoCategoria(resumo) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/explicacao-crescimento-categoria", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/explicacao-crescimento-categoria", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(resumo)

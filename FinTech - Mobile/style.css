@@ -2784,43 +2784,52 @@ tr.inativo {
 /* ===================================== */
 /* GRÁFICOS MAIORES E VISÍVEIS NO MOBILE */
 /* ================================*/
-/* 
-.chart {
-  background: white;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
- */
-/* Container do gráfico */
-
-/* 
 
 .chart-container,
-.chart-container-bowl {
-  flex: 1;
-  position: relative;
-  width: 100%;
-  height: 320px; /* altura agradável no desktop
-} 
-  */
-
-/* 
-.chart canvas {
-  width: 100% !important;
-  height: 100% !important;
+.chart-container-big {
+	width: 100%;
+	max-width: 500px;
+	/* limite de largura no celular */
+	margin: 0 auto;
+	/* centralizar horizontalmente */
 }
- */
 
+canvas {
+	width: 100% !important;
+	height: auto !important;
+}
 
-.chart-container-1 {
-	min-height: 250px;
-} 
+@media screen and (max-width: 768px) {
+	.chart-container {
+		max-width: 100%;
+	}
 
-.chart-container-2 {
-	height: 400px;
-} 
+	.chart-container-big {
+		max-width: 100%;
+	}
+
+	.chart h2 {
+		font-size: 16px;
+		text-align: center;
+	}
+}
+
+@media (max-width: 600px) {
+	.chart-container {
+		height: 250px;
+		/* mais altura para caber as 5 barras */
+		width: 350px;
+	}
+
+	.chart-container-big {
+		height: 400px;
+		/* mais altura para caber as 5 barras */
+		width: 700px;
+	}
+
+	
+}
+
+.ajustarUrgente{
+	margin-top: 100px !important;
+}

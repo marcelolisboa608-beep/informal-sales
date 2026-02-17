@@ -12,7 +12,7 @@
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
 
-	<title>AdminHub</title>
+	<title>Informal Sales</title>
 </head>
 
 <body>
@@ -20,8 +20,8 @@
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class="bx bxs-smile"></i>
-			<span class="text">AdminHub</span>
+			<img src="img/informal_sales_logo.jpg" alt="Logo" class="logo-sidebar" />
+			<span class="text">Informal Sales</span>
 		</a>
 		<ul class="side-menu top">
 
@@ -161,7 +161,10 @@
 				<div class="chart">
 					<h2>Vendas diárias (Últimos 7 dias)</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="vendas-periodo-estipulado"></canvas>
+
+					<div class="chart-container">
+						<canvas id="vendas-periodo-estipulado"></canvas>
+					</div>
 
 					<div class="recommend-cards">
 						<!-- CARD 4 - Preço / Margem -->
@@ -185,7 +188,11 @@
 				<div class="chart">
 					<h2>Top 5 Produtos mais vendidos</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="5-produtos-mais-vendidos"></canvas>
+
+					<div class="chart-container-bowl">
+						<canvas id="5-produtos-mais-vendidos"></canvas>
+					</div>
+
 
 					<div class="recommend-cards">
 						<div class="recommend-card weather">
@@ -208,7 +215,11 @@
 				<div class="chart">
 					<h2>Top 5 Produtos mais Lucrativos</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="5-produtos-mais-lucrativos"></canvas>
+
+
+					<div class="chart-container-bowl">
+						<canvas id="5-produtos-mais-lucrativos"></canvas>
+					</div>
 
 					<div class="recommend-cards">
 
@@ -232,7 +243,11 @@
 				<div class="chart">
 					<h2>Top 5 Categorias mais lucrativas</h2>
 					<i class='bx bx-edit organizar'></i>
-					<canvas id="5-categorias-mais-lucrativas"></canvas>
+
+					<div>
+						<canvas id="5-categorias-mais-lucrativas"></canvas>
+					</div>
+
 
 					<div class="recommend-cards">
 						<div class="recommend-card trending">
@@ -262,7 +277,7 @@
 						</li>
 						<li><i class='bx bx-chevron-right'></i></li>
 						<li>
-							<a class="active" href="#">Home</a>
+							<a class="active graficos-analise-submenu" href="#">Home</a>
 						</li>
 					</ul>
 				</div>
@@ -275,9 +290,11 @@
 				<div class="order">
 					<div class="head">
 						<h3>Vendas Recentes</h3>
-						<i class='bx bx-search'></i>
-						<i class='bx bx-filter' id="filterBtn"></i>
-						<span id="aplicarFonte">filtro</span>
+
+						<div class="right-icons-v">
+							<i class='bx bx-search'></i>
+							<i class='bx bx-filter' id="filterBtn"></i>
+						</div>
 
 						<!-- DROPDOWN DE FILTRO -->
 						<div class="filter-dropdown" id="filterDropdown">
@@ -290,7 +307,7 @@
 						</div>
 
 					</div>
-					<table>
+					<table class="table-vendas">
 						<thead>
 							<tr>
 								<th>Produto</th>

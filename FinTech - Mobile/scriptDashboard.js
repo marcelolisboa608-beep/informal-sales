@@ -389,7 +389,7 @@ renderVendasRecentes();
 // ---------------------------------------------
 
 async function gerarRecomendacoesGerais(payload) {
-    const res = await fetch("https://api-informal-sales.onrender.com/api/recomendacoes-gerais", {
+    const res = await fetch("https://api1-informal-sales.onrender.com/api/recomendacoes-gerais", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
